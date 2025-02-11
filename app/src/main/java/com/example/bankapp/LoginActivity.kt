@@ -188,7 +188,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         // التحقق من بيانات تسجيل الدخول
-        if (username == "admin" && password == "123456") {
+        if (username == "1" && password == "1") {
             Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)

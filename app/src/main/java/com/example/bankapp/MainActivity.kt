@@ -22,9 +22,10 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         Handler().postDelayed({
-val intent=Intent(this,LoginActivity::class.java)
+            val intent=Intent(this,LoginActivity::class.java)
             startActivity(intent)
             finish()
         },3000)
     }
 }
+
