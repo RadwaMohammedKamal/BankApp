@@ -31,9 +31,9 @@ class AccountsFragment : Fragment() {
 
         // 🔹 إنشاء قائمة الحسابات
         val accountsList = listOf(
-            AccountsClass("Bank A"),
-            AccountsClass("Bank B"),
-            AccountsClass("Bank C")
+            AccountsClass("Bank Maser"),
+            AccountsClass("Bank Al Ahly"),
+            AccountsClass("Bank CIB")
         )
 
         // 🔹 إعداد المحول (Adapter) باستخدام Groupie
