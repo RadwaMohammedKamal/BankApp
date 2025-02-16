@@ -104,8 +104,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:onClick="Register"
-        android:text="Register"
+        android:text=" Register"
         android:textColor="#616AE6"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 

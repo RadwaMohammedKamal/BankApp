@@ -65,7 +65,12 @@ class RegisterActivity : AppCompatActivity() {
         Toast.makeText(this, "Registered Successfully!", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
-        finish() // إغلاق شاشة التسجيل بعد النجاح
+    }
+
+    fun Login(view: View) {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
 
