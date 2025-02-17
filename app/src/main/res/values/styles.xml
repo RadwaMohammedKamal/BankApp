@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomMaterialDatePickerTheme" parent="ThemeOverlay.Material3.MaterialCalendar">
+        <!-- خلفية التقويم -->
+        <item name="android:windowBackground">#F5F5F5</item>
+
+        <!-- لون شريط العنوان (Header) -->
+        <item name="colorPrimary">#616EA6</item>
+
+        <!-- لون النص في العنوان -->
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- لون التاريخ المحدد -->
+        <item name="colorAccent">#FF9800</item>
+    </style>
+
+
+</resources>
+
