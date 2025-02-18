@@ -16,6 +16,7 @@ import com.google.android.material.textfield.TextInputLayout
 import java.text.SimpleDateFormat
 import java.util.Locale
 import com.example.bankapp.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.MaterialDatePicker
 import java.util.Date
@@ -180,10 +181,12 @@ class AddaccountsFragment : Fragment() {
             }
 
             // إذا كانت البيانات صحيحة، الانتقال إلى AccountsFragment
-            val transaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, AccountsFragment())
-            transaction.addToBackStack(null)
-            transaction.commit()
+//            val transaction = parentFragmentManager.beginTransaction()
+//            transaction.replace(R.id.frame_layout, AccountsFragment())
+//            transaction.addToBackStack(null)
+//            transaction.commit()
+            val bottomNavigationView = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+            bottomNavigationView.selectedItemId = R.id.account
         }
         return view
     }
