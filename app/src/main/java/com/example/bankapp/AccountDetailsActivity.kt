@@ -1,7 +1,13 @@
 package com.example.bankapp
 
 import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.github.mikephil.charting.charts.PieChart
@@ -14,7 +20,7 @@ class AccountDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_account_details)
-
+        findViewById<View>(android.R.id.content).setBackgroundColor(resources.getColor(R.color.white, theme))
         // Set Status Bar Color
         window.statusBarColor = Color.parseColor("#616AE6")
 
@@ -22,9 +28,24 @@ class AccountDetailsActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar3)
         setSupportActionBar(toolbar)
 
-        supportActionBar?.title = "Account Details"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+        // ✅ تغيير عنوان الـ Toolbar وجعله Bold
+        val title = SpannableString("Account Details").apply {
+            setSpan(StyleSpan(Typeface.BOLD), 0, length, 0) // جعل العنوان Bold
+            setSpan(RelativeSizeSpan(1.2f), 0, title.length, 0) // تكبير الحجم 1.4x
+            setSpan(ForegroundColorSpan(Color.WHITE), 0, length, 0) // جعل لون العنوان أبيض
+        }
+
+        supportActionBar?.apply {
+            this.title = title
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
+
+        // ✅ تغيير لون نص الـ AppBar
+        toolbar.setTitleTextColor(Color.WHITE)
+
+        // ✅ تغيير لون سهم الرجوع
+        toolbar.navigationIcon?.setTint(Color.WHITE)
 
         toolbar.setNavigationOnClickListener {
             onBackPressedDispatcher.onBackPressed()
@@ -54,46 +75,3 @@ class AccountDetailsActivity : AppCompatActivity() {
 }
 
 
-//package com.example.bankapp
-//
-//import android.os.Bundle
-//import androidx.activity.enableEdgeToEdge
-//import androidx.appcompat.app.AppCompatActivity
-//import androidx.appcompat.widget.Toolbar
-//import androidx.core.view.ViewCompat
-//import androidx.core.view.WindowInsetsCompat
-//import androidx.core.view.setPadding
-//
-//class AccountDetailsActivity : AppCompatActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
-//        setContentView(R.layout.activity_account_details)
-//
-//        //  Set Status Bar Color to Transparent
-//        window.statusBarColor = android.graphics.Color.parseColor("#616AE6")
-//        // Handling system insets
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
-//
-//        // Initialize Toolbar
-//        val toolbar = findViewById<Toolbar>(R.id.toolbar3)
-//        setSupportActionBar(toolbar)
-//
-//        // Set a custom title
-//        supportActionBar?.title = "Account Details"
-//
-//        // Enable back navigation
-//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-//        supportActionBar?.setDisplayShowHomeEnabled(true)
-//
-//        // Handle back button click
-//        toolbar.setNavigationOnClickListener {
-//            onBackPressedDispatcher.onBackPressed()
-//        }
-//    }
-//}
-//

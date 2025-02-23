@@ -26,7 +26,8 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.default_white)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.white)
+        findViewById<View>(android.R.id.content).setBackgroundColor(resources.getColor(R.color.white, theme))
 
         // Initialize UI elements using ViewBinding
         usernameEditText = findViewById(R.id.usernameEditText)
