@@ -10,7 +10,7 @@
     <!-- شريط الأدوات -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="418dp"
+        android:layout_width="match_parent"
         android:layout_height="75dp"
         android:background="#616AE6"
         android:title="Bank App"
