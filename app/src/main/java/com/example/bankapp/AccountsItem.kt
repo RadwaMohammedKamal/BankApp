@@ -22,20 +22,3 @@ class AccountsItem(private val accountsName: AccountsClass) : Item<GroupieViewHo
 
     override fun getLayout(): Int = R.layout.accounts_items
 }
-
-
-
-
-
-//package com.example.bankapp
-//
-//import com.example.bankapp.databinding.AccountsItemsBinding
-//import com.xwray.groupie.databinding.BindableItem
-//
-//class AccountsItem(private val accountsName: AccountsClass) : BindableItem<AccountsItemsBinding>() {
-//    override fun bind(viewBinding: AccountsItemsBinding, position: Int) {
-//        viewBinding.title.text = accountsName.bankName  // يجب تعيين النص داخل الـ TextView
-//    }
-//
-//    override fun getLayout(): Int = R.layout.accounts_items
-//}
